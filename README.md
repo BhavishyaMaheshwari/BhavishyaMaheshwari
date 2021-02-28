@@ -7,7 +7,7 @@
 
 <p align="left"> <a href="https://twitter.com/bhavishyamahes1" target="blank"><img src="https://img.shields.io/twitter/follow/bhavishyamahes1?logo=twitter&style=for-the-badge" alt="bhavishyamahes1" /></a> </p>
 
-- 🔭 I’m currently working on [Youtube Desktop](github.com/BhavishyaMaheshwari/youtube-desktop)
+- 🔭 I’m currently working on [Youtube Desktop](github.com/BhavishyaMaheshwari/youtube-electron)
 
 - 🌱 I’m currently learning **Javascript and Python to be updated**
 

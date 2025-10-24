@@ -55,7 +55,6 @@
   <img src="https://raw.githubusercontent.com/bhavishyamaheshwari/bhavishyamaheshwari/output/github-contribution-grid-snake.svg" />
 </p>
 
-
 ---
 
 ### Connect With Me

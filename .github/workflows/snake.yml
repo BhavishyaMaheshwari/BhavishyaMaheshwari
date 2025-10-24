@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"  # every day
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repo
         uses: actions/checkout@v3
         with:
           persist-credentials: true
@@ -21,15 +21,16 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-      - name: Create output branch if missing
+      - name: Create or Switch to Output Branch
         run: |
           if git ls-remote --exit-code --heads origin output; then
             git checkout output
           else
             git checkout --orphan output
+            git rm -rf .
           fi
 
-      - name: Generate Snake
+      - name: Generate Snake SVG
         uses: Platane/snk@v3
         with:
           github_user_name: bhavishyamaheshwari

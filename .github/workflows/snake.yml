@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight
+    - cron: "0 0 * * *"  # Runs daily at midnight
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          persist-credentials: true  # important for push
+          persist-credentials: true
           fetch-depth: 0
 
       - name: Create output branch if it doesn't exist
@@ -26,12 +26,13 @@ jobs:
         with:
           github_user_name: bhavishyamaheshwari
           outputs: |
-            github-contribution-grid-snake.svg  # put at root of branch
+            github-contribution-grid-snake.svg
 
-      - name: Commit & Push
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: "github-contribution-grid-snake.svg"
-          message: "🐍 Update Snake"
-          push: true
-          branch: output
+      - name: Commit Snake
+        run: |
+          git add github-contribution-grid-snake.svg
+          git commit -m "🐍 Update Snake" || echo "No changes to commit"
+
+      - name: Push to Remote
+        run: |
+          git push --set-upstream origin output --force

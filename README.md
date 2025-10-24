@@ -10,7 +10,7 @@
 - I enjoy solving optimisation problems, automating real-life systems, and building ~~useful~~ ML projects  
 - Working on  optimisation (ships + railways)  
 - I love adding features (locally) to **Monkeytype**  
-- Typing speed pr (169 wpm 15 secs)
+- Typing speed PR - (169 wpm 15 secs)
 
 ---
 
@@ -23,7 +23,7 @@
 
 ---
 
-### 📂 Featured Projects
+###  Featured Projects
 
 | Project | Description | Tech |
 |---------|-------------|------|

@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -16,23 +16,27 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Create output branch if it doesn't exist
+      - name: Setup Git
         run: |
-          git fetch origin output || git checkout --orphan output
-          git checkout -B output
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
 
-      - name: Generate Snake Animation
+      - name: Create output branch if missing
+        run: |
+          if git ls-remote --exit-code --heads origin output; then
+            git checkout output
+          else
+            git checkout --orphan output
+          fi
+
+      - name: Generate Snake
         uses: Platane/snk@v3
         with:
           github_user_name: bhavishyamaheshwari
-          outputs: |
-            github-contribution-grid-snake.svg
+          outputs: github-contribution-grid-snake.svg
 
-      - name: Commit Snake
+      - name: Commit & Push
         run: |
           git add github-contribution-grid-snake.svg
           git commit -m "🐍 Update Snake" || echo "No changes to commit"
-
-      - name: Push to Remote
-        run: |
           git push --set-upstream origin output --force

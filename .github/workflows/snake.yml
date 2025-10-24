@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # Runs daily at midnight
+    - cron: "0 0 * * *"  # Runs every day at midnight
   workflow_dispatch:
 
 jobs:
@@ -12,18 +12,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true  # important for push
+          fetch-depth: 0
+
+      - name: Create output branch if it doesn't exist
+        run: |
+          git fetch origin output || git checkout --orphan output
+          git checkout -B output
 
       - name: Generate Snake Animation
         uses: Platane/snk@v3
         with:
           github_user_name: bhavishyamaheshwari
           outputs: |
-            dist/github-contribution-grid-snake.svg
+            github-contribution-grid-snake.svg  # put at root of branch
 
-      - name: Push Snake to Output Branch
+      - name: Commit & Push
         uses: EndBug/add-and-commit@v9
         with:
-          add: "dist/github-contribution-grid-snake.svg"
-          message: "🐍 Generated Snake"
+          add: "github-contribution-grid-snake.svg"
+          message: "🐍 Update Snake"
           push: true
           branch: output

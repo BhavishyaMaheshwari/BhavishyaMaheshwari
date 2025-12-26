@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm Bhavishya Maheshwari </h1>
 <p align="center">
   <strong>AI and ML enthusiast | Loves optimisation and automation</strong><br>
-  <em>currently vibe coding lmao</em>
+  <em>learning go as you(I) go</em>
 </p>
 
 ---

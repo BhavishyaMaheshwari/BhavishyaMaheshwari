@@ -31,21 +31,6 @@
 | **RailOptimiser** | Scheduling & railway optimisation automation | Python, Optimisation |
 | **Monkeytype Contribution** | Features for personal use on Monkeytype | TypeScript, Svelte, Maths |
 
----
-
-### Recent GitHub Activity
-
-<!--START_SECTION:activity-->
-<!--END_SECTION:activity-->
-
----
-
-### GitHub Analytics
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=bhavishyamaheshwari&show_icons=true&theme=tokyonight" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bhavishyamaheshwari&layout=compact&theme=tokyonight" />
-</p>
 
 ---
 

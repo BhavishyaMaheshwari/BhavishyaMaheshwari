@@ -8,9 +8,9 @@
 
 ###  About Me
 - I enjoy solving optimisation problems, automating real-life systems, and building ~~useful~~ ML projects  
-- Working on  optimisation (ships + railways)  
-- I love adding features (locally) to **Monkeytype**  
+- Sophomore @NSUT, Delhi  
 - Typing speed PR - (169 wpm 15 secs)
+- Currently making Memoir - local photo sorter
 
 ---
 
